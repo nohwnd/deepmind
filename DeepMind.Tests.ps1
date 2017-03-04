@@ -25,7 +25,7 @@ Describe "Add-DeepMind" {
     }
 	
 	It "fails because I am testing stuff on appveyor" -TestCases @(
-        @{ A = 1; B = 1; Expected = 999 },    
+        @{ A = 1; B = 1; Expected = 999 }
     ) {
         param($A, $B, $Expected)
         # -- Arrange
