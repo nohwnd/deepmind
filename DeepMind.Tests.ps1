@@ -23,4 +23,17 @@ Describe "Add-DeepMind" {
         # -- Assert
         $actual | Should Be $Expected
     }
+	
+	It "fails because I am testing stuff on appveyor" -TestCases @(
+        @{ A = 1; B = 1; Expected = 999 },    
+    ) {
+        param($A, $B, $Expected)
+        # -- Arrange
+
+        # -- Act
+        $actual = Add-DeepMind -Url "http://dupsug10.0115633a.svc.dockerapp.io" -A $A -B $B
+
+        # -- Assert
+        $actual | Should Be $Expected
+    }
 }
