@@ -1,12 +1,4 @@
-function Add-DeepMind ($Url, $A, $B) {
-    $body = [pscustomobject]@{
-        a = $A;
-        b = $B
-    } | ConvertTo-Json
-
-    Invoke-WebRequest -Uri "$Url/deepmind/add" -ContentType "application/json" -Method Post -Body $body | 
-        select -expand Content
-}
+Import-Module $PSScriptRoot\DeepMind.psm1 -Force
 
 Describe "Add-DeepMind" {
     It "Adds <A> and <B> in the cloud and returns <Expected>" -TestCases @(
