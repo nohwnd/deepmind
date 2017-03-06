@@ -1,4 +1,7 @@
+. $PSScriptRoot\Helpers\AppVeyorHelpers.ps1
+
 Import-Module $PSScriptRoot\DeepMind.psm1 -Force
+
 
 Describe "Add-DeepMind" {
     It "Adds <A> and <B> in the cloud and returns <Expected>" -TestCases @(
