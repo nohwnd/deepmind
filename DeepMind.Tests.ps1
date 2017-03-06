@@ -10,7 +10,7 @@ Describe "Add-DeepMind" {
         # -- Arrange
 
         # -- Act
-        $actual = Add-DeepMind -Url "http://dupsug10.0115633a.svc.dockerapp.io" -A $A -B $B
+        $actual = Add-DeepMind -A $A -B $B
 
         # -- Assert
         $actual | Should Be $Expected
