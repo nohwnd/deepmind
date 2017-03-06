@@ -8,3 +8,5 @@
         -ContentType "application/json" -Method Post -Body $body | 
             select -expand Content
 }
+
+Export-ModuleMember -Function "Add-DeepMind"
