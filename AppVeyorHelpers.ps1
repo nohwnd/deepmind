@@ -32,6 +32,7 @@ function Parse-Tag ($Tag) {
             IsVersionTag = $isMatch
             Version = $Matches.version
             Suffix = $Matches.suffix
+            IsPrerelease = [bool]$Matches.Suffix
         }
     }
     else 
@@ -42,6 +43,7 @@ function Parse-Tag ($Tag) {
             IsVersionTag = $isMatch
             Version = ""
             Suffix = ""
+            IsPrerelease = $true
         }
     }
 }

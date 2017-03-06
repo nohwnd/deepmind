@@ -82,6 +82,23 @@ Describe "Parse-Tag" {
         $tag = Parse-Tag -Tag "the point of no return"
         $tag.Suffix | Should BeNullOrEmpty
     }
+
+    It "Given a tag that has suffix it sets IsPrerelease to `$true" {
+        $tag = Parse-Tag -Tag "1.1.1-rc"
+        $tag.IsPrerelease | Should Be $true
+    }
+
+    It "Given a tag empty tag it sets IsPrerelease to `$true" {
+        $tag = Parse-Tag -Tag ""
+        $tag.IsPrerelease | Should Be $true
+    }
+
+    It "Given a tag that is a version without suffix it sets IsPrerelease to `$false" {
+        $tag = Parse-Tag -Tag "1.1.1"
+        $tag.IsPrerelease | Should Be $false
+    }
+
+
 }
 
 Describe "Test-ModuleManifestVersionEqualToTagVersion" {
