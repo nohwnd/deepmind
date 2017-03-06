@@ -16,3 +16,11 @@ Describe "Add-DeepMind" {
         $actual | Should Be $Expected
     }
 }
+
+Invoke-OnlyDuringRelease {
+    Describe "Validate release" {
+        It "Module has the same version as tag" {
+            Assert-ModuleManifestVersionEqualToTagVersion -Tag $env:APPVEYOR_REPO_TAG_NAME -ManifestPath .\DeepMind.psd1
+        }
+    }
+}
