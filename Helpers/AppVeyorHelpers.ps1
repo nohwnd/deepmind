@@ -1,4 +1,16 @@
-﻿
+﻿<#PSScriptInfo
+
+.VERSION 0.1
+
+.AUTHOR nohwnd
+
+.GUID f8dab2f8-5b75-4d64-95eb-9b8b10cdd97a
+
+.DESCRIPTION AppVeyor helpers for tag parsing and running tests conditionally.
+
+#>
+
+
 function Get-Environment () {
     $env:Environment
 }
